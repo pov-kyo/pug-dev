@@ -1,9 +1,9 @@
-@use "../../foundation/variables" as v;
+@use '../../foundation/variables' as v;
 
 .c-heading-1 {
   &__en {
     padding-left: 2px;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 15px;
     color: v.$color-key;
   }
@@ -16,7 +16,7 @@
 .c-heading-2 {
   text-align: center;
   &__en {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 60px;
     font-weight: 300;
     color: v.$color-key;

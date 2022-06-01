@@ -1,4 +1,5 @@
 @use '../foundation/mixin' as m;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
 
 body {
   position: relative;
@@ -8,7 +9,4 @@ body {
 
 img {
   max-width: 100%;
-}
-a {
-  color: #111;
 }
