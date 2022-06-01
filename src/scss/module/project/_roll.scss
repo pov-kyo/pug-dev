@@ -1,0 +1,44 @@
+@use "../../foundation/function" as f;
+
+.p-roll {
+  display: flex;
+  &__list {
+    display: flex;
+    flex-shrink: 0;
+    animation: infinity-scroll 95s infinite linear 0.5s both;
+  }
+  &__item {
+    flex-shrink: 0;
+    width: 28vw;
+    height: f.pxtovw(320);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+.p-roll.-top {
+  & .p-roll__item {
+    &:nth-child(1) {
+      background-image: url(../img/roll-01.jpg);
+    }
+    &:nth-child(2) {
+      background-image: url(../img/roll-02.jpg);
+    }
+    &:nth-child(3) {
+      background-image: url(../img/roll-03.jpg);
+    }
+    &:nth-child(4) {
+      background-image: url(../img/roll-04.jpg);
+    }
+  }
+}
+
+@keyframes infinity-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

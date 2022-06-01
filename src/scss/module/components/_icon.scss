@@ -1,0 +1,39 @@
+.c-icon {
+  display: inline-block;
+  position: relative;
+  width: 15px;
+  height: 15px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s;
+  &.-medium {
+    width: 20px;
+    height: 20px;
+  }
+  &.-large {
+    width: 30px;
+    height: 30px;
+  }
+  &.-white {
+    filter: brightness(0) invert(1);
+  }
+  &.-arrow {
+    background-image: url(../img/arrow-right.svg);
+  }
+  &.-arrow-gray {
+    background-image: url(../img/arrow-right-circle.svg);
+  }
+  &.-arrow-gray-2 {
+    background-image: url(../img/arrow-right-circle-2.svg);
+  }
+  &.-contact {
+    background-image: url(../img/contact.svg);
+  }
+  &.-facebook {
+    background-image: url(../img/icon-facebook.svg);
+  }
+  &.-instagram {
+    background-image: url(../img/icon-instagram.svg);
+  }
+}

@@ -1,0 +1,57 @@
+@use "../../foundation/variables" as v;
+
+.c-tab {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding-top: 10px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 999px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #dadada;
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #f0f0f0;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #dddddd;
+    transform-origin: right top;
+    transform: scale(0, 1);
+    transition: transform 0.3s;
+  }
+  &.-is-active {
+    color: #fff;
+    background-color: v.$color-key;
+    border: none;
+    &::before {
+      background-color: transparent;
+    }
+    &::after {
+      background-color: transparent;
+    }
+  }
+  &:hover {
+    &::after {
+      transform-origin: left top;
+      transform: scale(1, 1);
+    }
+  }
+}

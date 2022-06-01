@@ -1,0 +1,5 @@
+$viewport: 1660; // 基準となるビューポート
+
+@function pxtovw($num, $width: $viewport) {
+  @return (1vw * $num / $width * 100);
+}

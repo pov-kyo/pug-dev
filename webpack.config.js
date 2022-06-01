@@ -2,6 +2,7 @@ const path = require("path");
 const globule = require("globule");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const enabledSourceMap = process.env.NODE_ENV !== "production";
 
@@ -86,8 +87,6 @@ const app = {
     // 拡張子を配列で指定
     extensions: [".ts", ".js"]
   },
-  //プラグインの設定
-  plugins: [],
   //source-map タイプのソースマップを出力
   devtool: "source-map",
   // node_modules を監視（watch）対象から除外
@@ -108,7 +107,14 @@ const app = {
     new MiniCssExtractPlugin({ // distの中にあるcssフォルダにstyle.cssを出力
       filename: "./css/style.css"
     }),
-
+    new CopyPlugin({
+      patterns: [
+        {
+          from: `${path.resolve(__dirname, "src")}/img`,
+          to: path.resolve(__dirname, "dist/img")
+        },
+      ],
+    }),
   ],
 };
 

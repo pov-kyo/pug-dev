@@ -1,0 +1,32 @@
+@use "../../foundation/variables" as v;
+
+.c-button-1 {
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -64px;
+    width: 54px;
+    height: 54px;
+    background-color: v.$color-key;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -50px;
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/arrow-right-normal.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transform: translateY(-50%);
+    filter: brightness(0) invert(1);
+  }
+}

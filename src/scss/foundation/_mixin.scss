@@ -1,0 +1,35 @@
+@use "variables" as v;
+
+@mixin responsive($breakpoint) {
+  @if map-has-key(v.$breakpoints, $breakpoint) {
+    @media screen and #{inspect(map-get(v.$breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @error "指定されたブレークポイントは定義されていません。" + "指定できるブレークポイントは次のとおりです。 -> #{map-keys(v.$breakpoints)}";
+  }
+}
+
+@mixin utilitySpace(
+  $propertyName,
+  $propertyPrefix,
+  $angleName,
+  $anglePrefix,
+  $breakpointKey: null
+) {
+  @if ($breakpointKey == null) {
+    @each $value in v.$utilityValue {
+      .u-#{$propertyPrefix}#{$anglePrefix}#{$value} {
+        #{$propertyName}-#{$angleName}: #{$value + "px !important"};
+      }
+    }
+  } @else {
+    @include responsive($breakpointKey) {
+      @each $value in v.$utilityValue {
+        .u-#{$propertyPrefix}#{$anglePrefix}#{$value}-#{$breakpointKey} {
+          #{$propertyName}-#{$angleName}: #{$value + "px !important"};
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.p-newsList {
+  &__item {
+    background-color: #fff;
+    border-radius: 10px;
+    & + & {
+      margin-top: 20px;
+    }
+  }
+}

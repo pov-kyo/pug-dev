@@ -1,3 +1,8 @@
-h1 {
-  color: red;
-}
+/* ==========================================================================
+* foundation
+========================================================================== */
+@use 'foundation/sanitize';
+@use 'foundation/mixin';
+@use 'foundation/function';
+@use 'foundation/base';
+@use 'foundation/variables';

@@ -1,0 +1,30 @@
+@use "../../foundation/variables" as v;
+
+.c-heading-1 {
+  &__en {
+    padding-left: 2px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    color: v.$color-key;
+  }
+  &__ja {
+    font-size: 30px;
+    letter-spacing: 0.025em;
+  }
+}
+
+.c-heading-2 {
+  text-align: center;
+  &__en {
+    font-family: "Open Sans", sans-serif;
+    font-size: 60px;
+    font-weight: 300;
+    color: v.$color-key;
+    text-transform: uppercase;
+  }
+  &__ja {
+    padding-right: 5px;
+    font-size: 16px;
+    letter-spacing: 0.025em;
+  }
+}
