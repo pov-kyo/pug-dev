@@ -1,17 +1,24 @@
 @use '../foundation/mixin' as m;
+@use '../foundation/variables' as v;
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&display=swap');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 
 body {
   position: relative;
   font-family: 'Noto Sans JP', sans-serif;
   overflow: hidden;
-  font-size: 120px;
-  @include m.responsive(md) {
-    font-size: 14px;
-  }
 }
 
 img {
   max-width: 100%;
+}
+
+a {
+  color: v.$color-text;
 }
